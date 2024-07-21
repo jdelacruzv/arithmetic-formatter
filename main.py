@@ -16,22 +16,22 @@ def convert_list(lst):
     return lst
 
 
-# Returns a boolean
-def count_digits(lst):
-    a = convert_list(lst)
+# Validates if the list returns true or false
+def validate_true_false(lst):
+    result = convert_list(lst)
     temp = False
-    for x in a:
-        if len(x) > 4:
+    for res in result:
+        if len(res) > 4:
             temp = True
     return temp
 
 
-def arithmetic_arranger(problems, show_answers=False):
-    if len(problems) > 5:
-        print('Error: Too many problems')
-
-    letters = only_letters(problems)
+def validate_errors(lst):
+    letters = only_letters(lst)
     print('String:', letters)
+
+    if len(lst) > 5:
+        print('Error: Too many problems')
 
     if ('*' in letters) or ('/' in letters):  # aqui esta mal
         print('Error: Operator must be \'+\' or \'-\'')
@@ -39,14 +39,19 @@ def arithmetic_arranger(problems, show_answers=False):
     for letter in letters:
         if letter.isalpha():
             print('Error: Numbers must only contain digits')
+            break
 
-    a = count_digits(problems)
-    if a:
+    if validate_true_false(lst):
         print('Error: Numbers cannot be more than four digits')
-    else:
-        print('OK')
+    
+
+def arithmetic_arranger(problems, show_answers=False):
+    validate_errors(problems)
+
 
 # arithmetic_arranger(['32 + 698', '3801 - 2', '45 + 43', '123 + 49', '1', '2'])
 # arithmetic_arranger(['32 + 698', '3801 / 2', '45 + 43', '123 * 49'])
 # arithmetic_arranger(['e2 + 698', '3801 - 2', '45 + 43', '123 + 49'])
-arithmetic_arranger(['32 + 698', '38011 - 2', '45 + 43', '123 + 49'])
+# arithmetic_arranger(['32 + 698', '38011 - 2', '45 + 43', '123 + 49'])
+# arithmetic_arranger(['xxxxx32 + 698', '3801 * 2', '45 + 43', '123 + 49', '1', '2'])
+arithmetic_arranger(['32 + 698', '3801 - 2', '45 + 43', '123 + 49'])
