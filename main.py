@@ -8,19 +8,19 @@ def only_letters(lst):
     return letter
 
 
-def z():
-    pass
+def convert_list(lst):
+    # Convert the list to a string
+    str = ' '.join(lst)
+    # Convert the string to a list
+    lst = str.split()
+    return lst
+
 
 # Returns a boolean
 def count_digits(lst):
-    lst_to_str = ' '.join(lst)
-    str_to_lst = lst_to_str.split()
-    print('Original:', lst)
-    print('Cadena:', lst_to_str)
-    print('Lista:', str_to_lst)
-    
+    a = convert_list(lst)
     temp = False
-    for x in str_to_lst:
+    for x in a:
         if len(x) > 4:
             temp = True
     return temp
