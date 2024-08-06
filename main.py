@@ -1,19 +1,9 @@
-# Returns string containing at least one letter
-def only_letters(lst):
-    letter = ''
-    for x in lst:
-        for y in x:
-            if not y.isdigit():
-                letter = letter + y.strip()
-    return letter
-
-
-def convert_list(lst):
+def convert_list(operations):
     # Convert the list to a string
-    str = ' '.join(lst)
+    initial_list = ' '.join(operations)
     # Convert the string to a list
-    lst = str.split()
-    return lst
+    final_list = initial_list.split()
+    return final_list
 
 
 # Validates if the list returns true or false
