@@ -15,23 +15,13 @@ def remove_characters(operations):
     return temp
 
 
-def validate_errors(lst):
-    letters = only_letters(lst)
-    print('String:', letters)
-
-    if len(lst) > 5:
-        print('Error: Too many problems')
-
-    if ('*' in letters) or ('/' in letters):  # aqui esta mal
-        print('Error: Operator must be \'+\' or \'-\'')
-
-    for letter in letters:
-        if letter.isalpha():
-            print('Error: Numbers must only contain digits')
-            break
-
-    if validate_true_false(lst):
-        print('Error: Numbers cannot be more than four digits')
+# Returns true if all elements are digits
+def only_digits(operations):
+    is_true = False
+    for operation in operations:
+        if not operation.isdigit():
+            is_true = True
+    return is_true
     
 
 def arithmetic_arranger(problems, show_answers=False):
