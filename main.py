@@ -6,13 +6,12 @@ def convert_list(operations):
     return final_list
 
 
-# Validates if the list returns true or false
-def validate_true_false(lst):
-    result = convert_list(lst)
-    temp = False
-    for res in result:
-        if len(res) > 4:
-            temp = True
+# Removes characters ('+', '-', '*', '/') from lists
+def remove_characters(operations):
+    temp = []
+    for operation in operations:
+        if (operation != '+') and (operation != '-') and (operation != '*') and (operation != '/'):
+            temp.append(operation)
     return temp
 
 
