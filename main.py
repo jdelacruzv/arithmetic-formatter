@@ -24,8 +24,13 @@ def only_digits(operations):
     return is_true
     
 
-def arithmetic_arranger(problems, show_answers=False):
-    validate_errors(problems)
+# Validate that the number is less than four digits
+def number_less_four_digits(operations):
+    is_true = False
+    for operation in operations:
+        if len(operation) > 4:
+            is_true = True
+    return is_true
 
 
 # arithmetic_arranger(['32 + 698', '3801 - 2', '45 + 43', '123 + 49', '1', '2'])
