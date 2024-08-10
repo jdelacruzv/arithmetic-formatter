@@ -25,7 +25,7 @@ def only_digits(operations):
     
 
 # Validate that the number is less than four digits
-def number_less_four_digits(operations):
+def length_digits(operations):
     is_true = False
     for operation in operations:
         if len(operation) > 4:
@@ -48,7 +48,7 @@ def arithmetic_arranger(problems, show_answers=False):
     elif only_digits(digits):
         return print('Error: Numbers must only contain digits.')
 
-    elif number_less_four_digits(digits):
+    elif length_digits(digits):
         return print('Error: Numbers cannot be more than four digits.')
 
     else:
@@ -66,8 +66,7 @@ def arithmetic_arranger(problems, show_answers=False):
 
             # Evaluates a mathematical expression passed as a string
             sum_items = eval(items[0] + items[1] + items[2])
-            data[3].append(
-                ' ' * (len(second) - len(str(sum_items))) + str(sum_items))
+            data[3].append(' ' * (len(second) - len(str(sum_items))) + str(sum_items))
 
         if show_answers:
             final_data.append('    '.join(data[0]))
