@@ -38,6 +38,8 @@ def arithmetic_arranger(problems, show_answers=False):
     final_data = []
     results = convert_list(problems)
     digits = remove_characters(results)
+    space_len = 4
+    separator = ' ' * space_len
 
     if len(results) > 15:
         return print('Error: Too many problems.')
@@ -69,14 +71,14 @@ def arithmetic_arranger(problems, show_answers=False):
             data[3].append(' ' * (len(second) - len(str(sum_items))) + str(sum_items))
 
         if show_answers:
-            final_data.append('    '.join(data[0]))
-            final_data.append('    '.join(data[1]))
-            final_data.append('    '.join(data[2]))
-            final_data.append('    '.join(data[3]))
+            final_data.append(separator.join(data[0]))
+            final_data.append(separator.join(data[1]))
+            final_data.append(separator.join(data[2]))
+            final_data.append(separator.join(data[3]))
         else:
-            final_data.append('    '.join(data[0]))
-            final_data.append('    '.join(data[1]))
-            final_data.append('    '.join(data[2]))
+            final_data.append(separator.join(data[0]))
+            final_data.append(separator.join(data[1]))
+            final_data.append(separator.join(data[2]))
 
         return print('\n'.join(final_data))
 
