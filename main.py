@@ -1,3 +1,4 @@
+# Converting list to string
 def convert_list(operations):
     # Convert the list to a string
     initial_list = ' '.join(operations)
@@ -41,7 +42,7 @@ def arithmetic_arranger(problems, show_answers=False):
     space_len = 4
     separator = ' ' * space_len
 
-    if len(results) > 15:
+    if len(results) > 6:
         return print('Error: Too many problems.')
 
     elif ('*' in results) or ('/' in results):
@@ -80,12 +81,17 @@ def arithmetic_arranger(problems, show_answers=False):
             final_data.append(separator.join(data[1]))
             final_data.append(separator.join(data[2]))
 
-        return print('\n'.join(final_data))
+        return '\n'.join(final_data)
 
 
-# arithmetic_arranger(['32 + 698', '3801 - 2', '45 + 43', '123 + 49', '1', '2'])
-# arithmetic_arranger(['32 + 698', '3801 / 2', '45 + 43', '123 * 49'])
-# arithmetic_arranger(['e2 + 698', '3801 - 2', '45 + 43', '123 + 49'])
-# arithmetic_arranger(['32 + 698', '38011 - 2', '45 + 43', '123 + 49'])
-# arithmetic_arranger(['xxxxx32 + 698', '3801 * 2', '45 + 43', '123 + 49', '1', '2'])
-arithmetic_arranger(['32 + 698', '3801 - 2', '45 + 43', '123 + 49'])
+#####  Test  #####
+print(f'{arithmetic_arranger(["3801 - 2", "123 + 49"])}')
+print(f'{arithmetic_arranger(["1 + 2", "1 - 9380"])}')
+print(f'{arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])}')
+print(f'{arithmetic_arranger(["11 + 4", "3801 - 2999", "1 + 2", "123 + 49", "1 - 9380"])}')
+print(f'{arithmetic_arranger(["44 + 815", "909 - 2", "45 + 43", "123 + 49", "888 + 40", "653 + 87"])}')
+print(f'{arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"])}')
+print(f'{arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"])}')
+print(f'{arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"])}')
+print(f'{arithmetic_arranger(["3 + 855", "988 + 40"], True)}')
+print(f'{arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True)}')
